@@ -13,13 +13,10 @@ background-color:#FFC0CB ;
 } 
 header{
     display: flex;
-    position:sticky;
+    position:fixed;
     top: 0;
     background-color:#9b4746;
     padding: 10px;
-    border: 1px solid;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
     text-align: center;
     z-index:1;
 }
@@ -37,6 +34,15 @@ iframe{
     height:100%;
     width: 100%;
 }
+footer{
+    display: flex;
+    position:fixed;
+    bottom: 0;
+    background-color:#9b4746;
+    padding: 10px;
+    text-align: center;
+    z-index:1;
+}
 </style>
 </head>
 <body oncontextmenu="return false;">
@@ -44,6 +50,9 @@ iframe{
 <a href="index.html">home🏠</a>
 <a href="mailto:deependrayad2@gmail.com">Mail📧</a>
 </header>
-<iframe src="index2.html"></iframe>
+    <b>
+        <iframe src="index2.html"></iframe>
+    </b>
+<footer>&copy; by me, All Right Reserved</footer>
 </body>
 </html>
