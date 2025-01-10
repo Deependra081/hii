@@ -83,7 +83,7 @@
   /* Dark Theme */
   @media (prefers-color-scheme: dark) {
     body {
-      background: linear-gradient(45deg, #000000, #000000, #000000, #000000);
+      background:#000000;
     }
 
     .navbar {
