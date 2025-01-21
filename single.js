@@ -68,23 +68,23 @@ function changeContent(page) {
                 <div class="container">
                 <table>
                     <tr>
-                        <td><a class="toggle-btn" href="#quiz-week1">Week 1: Assignment 1</a></td>
+                        <td><a class="toggle-btn" href="#quiz-week1">Lab report</a></td>
                     </tr>
                     <div>
                     <tr>
-                        <td><a class="toggle-btn" href="#intro-plasma">Introduction to Plasma</a></td>
+                        <td><a class="toggle-btn" href="#intro-plasma">Experiment 1</a></td>
                     </tr>
                     <tr>
-                        <td><a class="toggle-btn" href="#intro-plasma-ii">Introduction to Plasma -II</a></td>
+                        <td><a class="toggle-btn" href="#intro-plasma-ii">Experiment 2</a></td>
                     </tr>
                     <tr>
-                        <td><a class="toggle-btn" href="#plasma-oscillations">Plasma Oscillations</a></td>
+                        <td><a class="toggle-btn" href="#plasma-oscillations">Experiment 3</a></td>
                     </tr>
                     <tr>
-                        <td><a class="toggle-btn" href="#debye-shielding">Debye Shielding</a></td>
+                        <td><a class="toggle-btn" href="#debye-shielding">Experiment 4</a></td>
                     </tr>
                     <tr>
-                        <td><a class="toggle-btn" href="#debye-potential">Debye Potential</a></td>
+                        <td><a class="toggle-btn" href="#debye-potential">Experiment 5</a></td>
                     </tr>
                 </table>
             </div>
@@ -134,165 +134,72 @@ function changeContent(page) {
 		case 'week2':
 			contentDiv.innerHTML = 
 				`<main>
-                <div class="page">
-                <div class="content">
+        <div class="page">
+            <div class="content">
                 <div class="container">
-                soon
+                <table>
+                    <tr>
+                        <td><a class="toggle-btn" href="#quiz-week1">Lab report</a></td>
+                    </tr>
+                    <div>
+                    <tr>
+                        <td><a class="toggle-btn" href="#intro-plasma">Experiment 1</a></td>
+                    </tr>
+                    <tr>
+                        <td><a class="toggle-btn" href="#intro-plasma-ii">Experiment 2</a></td>
+                    </tr>
+                    <tr>
+                        <td><a class="toggle-btn" href="#plasma-oscillations">Experiment 3</a></td>
+                    </tr>
+                    <tr>
+                        <td><a class="toggle-btn" href="#debye-shielding">Experiment 4</a></td>
+                    </tr>
+                    <tr>
+                        <td><a class="toggle-btn" href="#debye-potential">Experiment 5</a></td>
+                    </tr>
+                </table>
+            </div>
+                <div id="intro-plasma" class="container">
+                
+                    <h2>Introduction to Plasma</h2>
+                    <p>The instructor begins by defining plasma as the fourth state of matter. He explains that matter can exist in three states: solid, liquid, and gas. In a solid, the particles are tightly packed together. In a liquid, the particles are loosely bound and move randomly. In a gas, the particles are even more loosely bound and move freely. The instructor then explains that plasma is a gas that has been ionized, meaning that the atoms have lost electrons. This results in a gas that is composed of both positively charged ions and negatively charged electrons.
+
+                        The instructor then discusses how plasma is produced. He explains that plasma can be produced by heating a gas to a very high temperature. This high temperature causes the atoms to lose electrons, which results in the formation of plasma. Plasma can also be produced by subjecting a gas to a very low pressure. This low pressure can also cause the atoms to lose electrons, which results in the formation of plasma.
+                        
+                        The instructor then discusses the properties of plasma. He explains that plasma is a very good conductor of electricity. This is because plasma is composed of charged particles, which can easily move through the plasma. The instructor also explains that plasma is a very good emitter of light. This is because the charged particles in plasma can emit light when they collide with each other.
+                        
+                        The instructor then discusses the applications of plasma. He explains that plasma is used in a variety of applications, including lighting, welding, and medical treatments. Plasma is also used in the production of semiconductors and other materials.</p>
+                
                 </div>
+
+                <div id="intro-plasma-ii" class="container">
+                    <h2>Introduction to Plasma -II</h2>
+                    <p>This is the second part of the introduction to plasma.</p>
                 </div>
+
+                <div id="plasma-oscillations" class="container">
+                    <h2>Plasma Oscillations</h2>
+                    <p>This section covers plasma oscillations.</p>
                 </div>
-                </main>`;
+
+                <div id="debye-shielding" class="container">
+                    <h2>Debye Shielding</h2>
+                    <p>This section covers Debye shielding.</p>
+                </div>
+
+                <div id="debye-potential" class="container">
+                    <h2>Debye Potential</h2>
+                    <p>This section covers Debye potential.</p>
+                </div>
+
+                <div id="quiz-week1" class="container">
+                    <h2>Quiz: Week 1: Assignment 1</h2>
+                    <p>This is the quiz for week 1.</p>
+                </div>
+            </div>
+        </div>
+    </main>`;
 			break;
-// week 3
-case 'week3':
-    contentDiv.innerHTML = 
-      `
-      <main>
-                <div class="page">
-                <div class="content">
-                <div class="container">
-                soon
-                </div>
-                </div>
-                </div>
-                </main>
-      `;
-			break;
-// week 4 
-case 'week4':
-    contentDiv.innerHTML = 
-      `
-      <main>
-                <div class="page">
-                <div class="content">
-                <div class="container">
-                soon
-                </div>
-                </div>
-                </div>
-                </main>
-      `;
-			break;
-// week 5
-case 'week5':
-      contentDiv.innerHTML = 
-        `
-        <main>
-                  <div class="page">
-                  <div class="content">
-                  <div class="container">
-                  soon
-                  </div>
-                  </div>
-                  </div>
-                  </main>
-        `;
-        break;
-// week 6
-case 'week6':
-        contentDiv.innerHTML = 
-          `
-          <main>
-                    <div class="page">
-                    <div class="content">
-                    <div class="container">
-                    soon
-                    </div>
-                    </div>
-                    </div>
-                    </main>
-          `;
-          break;
-// week 7
-case 'week7':
-          contentDiv.innerHTML = 
-            `
-            <main>
-                      <div class="page">
-                      <div class="content">
-                      <div class="container">
-                      soon
-                      </div>
-                      </div>
-                      </div>
-                      </main>
-            `;
-            break;
-// week 8
-case 'week8':
-            contentDiv.innerHTML = 
-             `
-              <main>
-                        <div class="page">
-                        <div class="content">
-                        <div class="container">
-                        soon
-                        </div>
-                        </div>
-                        </div>
-                        </main>
-              `;
-              break;
-// week 9
-case 'week9':
-            contentDiv.innerHTML = 
-             `
-              <main>
-                        <div class="page">
-                        <div class="content">
-                        <div class="container">
-                        soon
-                        </div>
-                        </div>
-                        </div>
-                        </main>
-              `;
-              break;
-// week 10              
-case 'week10':
-              contentDiv.innerHTML = 
-                `
-                <main>
-                          <div class="page">
-                          <div class="content">
-                          <div class="container">
-                          soon
-                          </div>
-                          </div>
-                          </div>
-                          </main>
-                `;
-                break;
- // week 11               
-case 'week11':
-                contentDiv.innerHTML = 
-                  `
-                  <main>
-                            <div class="page">
-                            <div class="content">
-                            <div class="container">
-                            soon
-                            </div>
-                            </div>
-                            </div>
-                            </main>
-                  `;
-                  break;
-// week 12
-case 'week12':
-                  contentDiv.innerHTML = 
-                    `
-                    <main>
-                              <div class="page">
-                              <div class="content">
-                              <div class="container">
-                              soon
-                              </div>
-                              </div>
-                              </div>
-                              </main>
-                    `;
-                    break;
 // form
 		case 'contact':
 			contentDiv.innerHTML = 
