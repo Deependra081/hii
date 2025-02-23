@@ -207,7 +207,7 @@ function changeContent(page) {
   <div class="content">
     <h1>Contact Us</h1>
     <p>We'd love to hear from you! Please fill out the form below and we'll get in touch with you shortly.</p>
-    <form action="https://formbold.com/s/9R7GG" method="post" class="contact-form">
+    <form action="https://getform.io/f/lakmzeda" method="post" class="contact-form">
       <div class="form-group">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
