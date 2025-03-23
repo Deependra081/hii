@@ -3,21 +3,391 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#00ffcc">
+    <meta name="theme-color" content="#ff0055">
     <title>Modern Glassmorphism Website</title>
-    <link rel="stylesheet" href="single.css">
+    <style>
+      * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@media print {
+  body {
+    display: none;
+  }
+}
+body {
+  margin-top: 100px;
+  -webkit-touch-callout: none; /* Disable long press */
+  -webkit-user-select: none;   /* Disable text selection */
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(45deg,#ff0055, #cf4c53, #ff0055, #ff0055);
+  background-size: 400% 400%;
+  animation: gradientAnimation 10s ease infinite alternate, swipeLeft 5s infinite;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+img[src="https://deependra.in/wp-content/uploads/2025/01/cat-2.png"] {
+  position: relative;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  animation: bounce 2s infinite;
+}
+.page{
+ margin-top: 20px;
+  margin-bottom: 20px;
+  animation: swipeLeft 1s ease-in-out;
+}
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  animation: fadeIn 1s ease-in-out;
+}
+
+.navbar .logo a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style-type: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin: 0 1rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ff77ff;
+}
+
+.burger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.burger span {
+  width: 25px;
+  height: 3px;
+  background:#83cc23;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 800px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: rgba(8, 238, 66, 0.1);
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    animation: slideIn 0.5s ease-in-out;
+  }
+
+  .nav-links.active {
+    display:block;
+    background: linear-gradient(45deg,#ff0055, #cf4c53, #ff0055, #ff0055);
+
+  }
+
+  .nav-links li {
+    margin: 1rem 0;
+  }
+
+  .burger {
+    display: flex;
+  }
+}
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 10000;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.modal video {
+  width: 80%;
+  max-width: 800px;
+  border-radius: 10px;
+}
+
+.modal-content {
+  position: absolute;
+  color: white;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.modal-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.modal-content p {
+  font-size: 1.2rem;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(0); }
+}
+
+.modal-content h2, .modal-content p {
+  animation: fadeIn 2s ease-in-out;
+}
+
+.modal-content h2 {
+  animation-delay: 1s;
+}
+
+.modal-content p {
+  animation-delay: 2s;
+}
+/* Dark Theme */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #000000;
+  }
+
+  .navbar {
+    background: rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar .logo a,
+  .nav-links a {
+    color: white;
+  }
+
+  .burger span {
+    background:#cc2366;
+  }
+
+  .page {
+    color: #15ff00;
+  }
+}
+
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+.container {
+  max-width: 800px;
+  margin-left: 20px;
+  margin-right: 20px;
+  height: auto;
+  overflow: visible;
+  transition: max-height 0.5s ease;
+  margin-bottom: 30px;
+  padding: 1rem;
+  border: 1px solid #15ff00;
+  border-radius: 10px;
+  animation: cardDistribution 1s ease, borderGradientCircle 3s linear infinite;
+}
+
+@keyframes cardDistribution {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes borderGradientCircle {
+  0% {
+    border-color: #d0ff00;
+  }
+  25% {
+    border-color: #bbff00;
+  }
+  50% {
+    border-color: #cf4c53;
+  }
+  75% {
+    border-color: #ffae00;
+  }
+  100% {
+    border-color: #15ff00;
+  }
+}
+
+.container h4 {
+  margin-bottom: 1rem;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.container p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.toggle-btn {
+  cursor: pointer;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  /* background-size: 100% 100%; */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background 0.3s;
+  animation: gradientAnimation 5s ease infinite, fadeIn 1s ease-in-out;
+}
+
+@media screen and (max-width: 600px) {
+  .toggle-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .toggle-btn {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
+  }
+}
+}
+
+.toggle-btn:hover {
+  background: linear-gradient(45deg, #bc1888, #cc2366, #dc2743, #e6683c, #f09433);
+  background-size: 200% 200%;
+}
+
+.toggle-btn i {
+  margin-left: 0.5rem;
+  animation: gradientAnimation 5s ease infinite, fadeIn 1s ease-in-out;
+}
+table {
+  width: 100%;
+  text-align: justify;
+  border-collapse: collapse;
+  max-width: 720px;
+}
+
+a {
+  text-decoration: none;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  animation: fadeIn 1s ease-in-out;
+  background:unset;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background: unset;
+}
+
+.form-group label {
+  font-size: 1.1rem;
+  background: unset;
+}
+.form-group input, .form-group textarea {
+  padding: 0.5rem;
+  border: 1px solid #d61313;
+  border-radius: 5px;
+  font-size: 1rem;
+  background: unset;
+  color: aqua;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .contact-form {
+    padding: 1rem;
+  }
+}
+    </style>
 </head>
 <body>
     <div id="app">
         <header>
             <nav class="navbar">
               <div class="logo">
-                <a href=""><img src="https://deependra.in/wp-content/uploads/2025/01/cat-2.png"></a>
+                <a href="https://deependra.in"><img src="https://deependra.in/wp-content/uploads/2025/01/cat-2.png"></a>
               </div>
               <ul class="nav-links">
                 <li>
-                    <a href="" onclick=
-					"changeContent('')">
+                    <a href="https://deependra.in">
 						Home
 					</a>
                 </li>
@@ -39,7 +409,12 @@
 						Nuclear physics lab
 					</a>
                 </li>
-               
+                <li>
+                  <a href="#" onclick=
+        "changeContent('privacy')">
+          Privacy-policy
+        </a>
+              </li>
               </ul>
               <div class="burger" id="burger">
                 <span></span>
@@ -48,8 +423,134 @@
               </div>
             </nav>
           </header>
-    </div>
-    <div id="content">
+<main>
+      <div id="content" class="page">
+          <div class="">
+
+               
+<div class="container">
+ <h2>Who are you and why are you wasting my forms and what are these(👇) messages</h2>
+<p> Dia duit, theastaigh uaim do phraghas a fháil.</p>
+<p>Hej, jeg ønskede at kende din pris.</p>
+<p> Sveiki, es gribēju zināt savu cenu.</p>
+<p> Hæ, ég vildi vita verð þitt.</p>
+</div>
+                <div class="container">
+                  <h3>Recent uploads</h3>
+                  <ul>
+                    <a class="toggle-btn" href="#" onclick="changeContent('week1')">
+                        Statistical mechanics lab
+                    </a>
+                    <a class="toggle-btn" href="#" onclick="changeContent('week2')">
+                        Nuclear physics lab
+                    </a>
+                  </ul>
+                </div>
+                <div class="container">
+                  <h3 class="toggle-btn">Nuclear physics Lab syllabus</h3>
+                  <div class="justify">
+                  <p>To study radioactivity using GM counter with different types of sources</p>
+                  <p>1. Study the characteristics of GM counter and measure Plateau</p>
+                  <p>2. Study of absorption factor using different thickness of Aluminum sheets</p>
+                  <p>3. Study half cycle</p>
+                  <p>4. Inverse square law using Distribution Method</p>
+                  <p>5. To determine the endpoint energy of β particle of a given radioactive source</p>
+                </div>
+              </div>
+              <div class="container">
+                <h3 class="toggle-btn">Statistical mechanics Lab syllabus</h3>
+                <div class="justify">
+                  <p>1. Computational analysis of the behavior of a collection of particles in a box that satisfy Newtonian mechanics and interact via the Lennard-Jones potential, varying the total number of particles N and the initial conditions:
+                  <p>Study of local number density in the equilibrium state (i) average; (i) fluctuationsb.
+                  </p>
+                  <p>Study of transient behavior of the system (approach to cquilibrium).
+                  </p>
+                  <p>Relationship of large N and the atrow of time
+                  </p>
+                  <p>Computation of the velocity distribution of particles for the system and comparisonwith the Maxwell velocity distribution
+                  </p>
+                  <p>Computation and study of mean molecular speed and its dependence on particlemass
+                  </p>
+                  <p>Computation of fraction of molecules in an ideal gas having speed near the mostprobable specd
+                  </p>
+                </p>
+                  <p>2. Computation of the partition function Z (b) for examples ofisystems with a finite numby of single particle levels (e.g., 2 level, 3 level, etc.) and a finite number of non-interacin particles N under Maxwell-Boltzmann, Fermi-
+                  Dirac and Bose-Einstein statistics:
+                  <p>Study of how Z (b), average energy E, energy fluctuation DE, specific heat ayconstant volume Cv, depend upon the temperature, total number of particles N andthe spectrum of single particle states.
+                  </p>
+                  <p>Ratios of occupation numbers of various states for the systems considered abovec.
+                  </p>
+                  <p>Computation of physical quantities at large and small temperature T andcomparison of various statistics at large and small tomperature T.
+                  </p>
+                </p>
+                  <p>3. Plot Planck's law for Black Body radiation and compare it with Raleigh-Jeans Law at hightemperature and low temperature.
+                  </p>
+                  <p>4. Plot Specific Heat of Solids (a) Dulong-Petit law, (b) Einstein distribution function, (e) Debye distribution function for high temperature and low remperature and compare them for these two cases.
+                  </p>
+                  <p>5. Plot the following functions with energy at different temperatures
+                  Maxwell-Boltzmann distribution
+                  Fermi-Dirac distributionc.
+                  Bose-Einstein distribution
+                </p>
+              </div>
+            </div>
+          </div>
+      </div>
+</main>
+<audio id="click-sound" src="https://deependra.in/wp-content/uploads/2025/02/hard-slap-46388.mp3"></audio>
+       
+<script>
+
+// slap sound
+document.addEventListener('click', function() {
+            document.getElementById('click-sound').play();
+        });
+        document.addEventListener('touchstart', function() {
+            document.getElementById('click-sound').play();
+        });
+// main script
+  const burger = document.getElementById('burger');
+const navLinks = document.querySelector('.nav-links');
+
+burger.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const welcomeVideoModal = document.getElementById('welcomeVideoModal');
+  const welcomeVideo = document.getElementById('welcomeVideo');
+
+  if (!localStorage.getItem('welcomeVideoShown')) {
+    welcomeVideoModal.style.display = 'flex';
+    welcomeVideo.play();
+
+    welcomeVideo.onended = () => {
+      welcomeVideoModal.style.display = 'none';
+      localStorage.setItem('welcomeVideoShown', 'true');
+    };
+  } else {
+    welcomeVideoModal.style.display = 'none';
+  }
+});
+
+// Detect screenshot (not foolproof)
+if (navigator.userAgent.match(/Android|iPhone|iPad|iPod/i)) {
+  window.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      document.body.style.display = 'none';
+    } else {
+      document.body.style.display = 'block';
+    }
+  });
+}
+        document.addEventListener('contextmenu', (e) => e.preventDefault());
+function changeContent(page) {
+	var contentDiv = document.getElementById('content');
+
+	switch (page) {
+		case 'home':
+			contentDiv.innerHTML = `
+				  <div id="content">
         <div class="page">
             <div class="content">
               <h2>Welcome again</h2>
@@ -63,22 +564,209 @@
                 <li><a href="#"></a></li>
                 <a class="more-button" href="#" onclick=
 					"changeContent('week1')">
-                    Statistical mechanics lab
-                </a>
-                    <a class="more-button" href="#" onclick=
-					"changeContent('week2')">
-                    Nuclear physics lab
-                </a>
+						Week 1
+					</a>
               </ul>
             </div>
           </div>
+    </div>`;
+			break;
+		case 'week1':
+			contentDiv.innerHTML = `
+				<main>
+    <div class="page">
+        <div class="content">
+            <div class="container">
+            <table>
+                <tr>
+                    <td><a class="toggle-btn" href="#quiz-week1">Lab report</a></td>
+                </tr>
+                <div>
+                <tr>
+                    <td><a class="toggle-btn" href="#intro-plasma">Experiment 1</a></td>
+                </tr>
+                <tr>
+                    <td><a class="toggle-btn" href="#intro-plasma-ii">Experiment 2</a></td>
+                </tr>
+                <tr>
+                    <td><a class="toggle-btn" href="#plasma-oscillations">Experiment 3</a></td>
+                </tr>
+                <tr>
+                    <td><a class="toggle-btn" href="#debye-shielding">Experiment 4</a></td>
+                </tr>
+                <tr>
+                    <td><a class="toggle-btn" href="#debye-potential">Experiment 5</a></td>
+                </tr>
+            </table>
+        </div>
+            <div id="intro-plasma" class="container">
+            
+                <h4>Study the characteristics of GM counter and measure Plateau</h4>
+                <p>soon</p>
+            
+            </div>
+
+            <div id="intro-plasma-ii" class="container">
+                <h4>Study of absorption factor using different thickness of Aluminum sheets</h4>
+                <p>soon</p>
+            </div>
+
+            <div id="plasma-oscillations" class="container">
+                <h4>Study half cycle</h4>
+                <p>soon</p>
+            </div>
+
+            <div id="debye-shielding" class="container">
+                <h4>Plot Specific Heat of Solids (a) Dulong-Petit law, (b) Einstein distribution function, (e) Debye distribution function for high temperature and low remperature and compare them for these two cases.</h4>
+                <p><a class="toggle-btn" href="https://deependra081.github.io/uploads/specific%20heat%20of%20solids.pdf">Download file</a><a class="toggle-btn" href="https://github.com/Deependra081/uploads/blob/main/Screenshot%202025-02-16%20122030_122350.png">Download plot</a><a class="toggle-btn" href="https://deependra081.github.io/uploads/Screenshot%202025-02-16%20122048_122354.png">Download code</a></p>
+<p><iframe src="https://docs.google.com/gview?url=https://deependra081.github.io/uploads/specific%20heat%20of%20solids.pdf&embedded=true" width="100%" height="400px" allow="autoplay"></iframe></p>
+<p><img width="100%" height="auto" src="https://deependra081.github.io/uploads/Screenshot%202025-02-16%20122030_122350.png"></p>
+<p><img width="100%" height="auto" src="https://deependra081.github.io/uploads/Screenshot%202025-02-16%20122048_122354.png"></p>
+            </div>
+
+            <div id="debye-potential" class="container">
+                <h4>To determine the endpoint energy of β particle of a given radioactive sourc</h4>
+                <p>soon</p>
+            </div>
+
+            <div id="quiz-week1" class="container">
+                <h4> Report:Inverse square law using Distribution law(GM counter)</h4>
+                <p>Report:Inverse square law using Distribution law(GM counter)</p>
+<a class="toggle-btn" href="https://deependra081.github.io/uploads/specific%20heat%20report.docx">Download report</a>
+<iframe src="https://docs.google.com/gview?url=https://deependra081.github.io/uploads/specific%20heat%20report.docx&embedded=true" width="100%" height="400px" allow="autoplay"></iframe>
+               
+</div>
+            </div>
+        </div>
     </div>
-    <script src="single.js"></script>
-    <div id="welcomeVideoModal" class="modal">
-        <video id="welcomeVideo" src="https://deependra.in/wp-content/uploads/2025/01/Gojo-Satoru-–-Jujutsu-Kaisen-AMV_Edit.mp4" autoplay muted></video>
-        <div class="modal-content">
-          <h2>Welcome Dear</h2>
-          <p>"Hello! So glad you found us. ..."</p>
+</main>
+			`;
+            break;
+// week 2
+case 'week2':
+  contentDiv.innerHTML = `
+    <main>
+    <div class="page">
+        <div class="content">
+            <div class="container">
+            <table>
+                <tr>
+                    <td><a class="toggle-btn" href="#quiz-week1">Lab report</a></td>
+                </tr>
+                <div>
+                <tr>
+                    <td><a class="toggle-btn" href="#intro-plasma">Experiment 1</a></td>
+                </tr>
+                <tr>
+                    <td><a class="toggle-btn" href="#intro-plasma-ii">Experiment 2</a></td>
+                </tr>
+                <tr>
+                    <td><a class="toggle-btn" href="#plasma-oscillations">Experiment 3</a></td>
+                </tr>
+                <tr>
+                    <td><a class="toggle-btn" href="#debye-shielding">Experiment 4</a></td>
+                </tr>
+                <tr>
+                    <td><a class="toggle-btn" href="#debye-potential">Experiment 5</a></td>
+                </tr>
+            </table>
+        </div>
+            <div id="intro-plasma" class="container">
+            
+                <h4>Study the characteristics of GM counter and measure Plateau</h4>
+                <p>soon</p>
+            
+            </div>
+
+            <div id="intro-plasma-ii" class="container">
+                <h4>Study of absorption factor using different thickness of Aluminum sheets</h4>
+                <p>soon</p>
+            </div>
+
+            <div id="plasma-oscillations" class="container">
+                <h4>Study half cycle</h4>
+                <p>soon</p>
+            </div>
+
+            <div id="debye-shielding" class="container">
+                <h4>Inverse square law using Distribution law(GM counter)</h4>
+                <p><a class="toggle-btn" href="https://deependra081.github.io/uploads/Inverse%20square%20law%20gm%20counter.pdf">Download file</a>
+<iframe src="https://docs.google.com/gview?url=https://deependra081.github.io/uploads/Inverse%20square%20law%20gm%20counter.pdf&embedded=true" width="100%" height="400px" allow="autoplay"></iframe>
+  </p>
+            </div>
+
+            <div id="debye-potential" class="container">
+                <h4>To determine the endpoint energy of β particle of a given radioactive sourc</h4>
+                <p>soon</p>
+            </div>
+
+            <div id="quiz-week1" class="container">
+                <h4> Report:Inverse square law using Distribution law(GM counter)</h4>
+                <p>Report:Inverse square law using Distribution law(GM counter)</p>
+<a class="toggle-btn" href="https://deependra081.github.io/uploads/Nuclear%20phy%20inverse%20sqare%20law%20(1).docx">Download report</a>
+<iframe src="https://docs.google.com/gview?url=https://deependra081.github.io/uploads/Nuclear%20phy%20inverse%20sqare%20law%20(1).docx&embedded=true" width="100%" height="400px" allow="autoplay"></iframe>
+               
+</div>
+            </div>
+        </div>
+    </div>
+</main>
+  `;
+        break;
+// form
+		case 'contact':
+			contentDiv.innerHTML = 
+				`<div class="page">
+  <div class="content">
+    <h1>Contact Us</h1>
+    <p>We'd love to hear from you! Please fill out the form below and we'll get in touch with you shortly.</p>
+    <form action="https://getform.io/f/lakmzeda" method="post" class="contact-form">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="wait! who are you?" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Tell us your problem:</label>
+        <textarea id="message" name="message" rows="5" placeholder="wait! Do you know me? What do you want?" required></textarea>
+      </div>
+      <button class="toggle-btn" type="submit">Submit</button>
+    </form>
+  </div>
+</div>`;
+			break;
+    case 'privacy':
+      contentDiv.innerHTML = `
+        <div class="page">
+          <div class="container">
+            <h1>Privacy Policy</h1>
+            <p>Your privacy is important to us. It is our policy to respect your privacy regarding any information we may collect from you across our website, <a href="https://deependra.in">deependra.in</a>, and other sites we own and operate.</p>
+            <h2>1. Information we collect</h2>
+            <p>We only collect information about you if we have a reason to do so – for example, to provide our services, to communicate with you, or to make our services better.</p>
+            <h2>2. How we use information</h2>
+            <p>We use the information we collect in various ways, including to provide, operate, and maintain our website, improve, personalize, and expand our website, understand and analyze how you use our website, develop new products, services, features, and functionality, communicate with you, either directly or through one of our partners, including for customer service, to provide you with updates and other information relating to the website, and for marketing and promotional purposes.</p>
+            <h2>3. Sharing information</h2>
+            <p>We do not share your personal information with anyone except to comply with the law, develop our products, or protect our rights.</p>
+            <h2>4. Security</h2>
+            <p>We take precautions to protect your information. When you submit sensitive information via the website, your information is protected both online and offline.</p>
+            <h2>5. Changes to this policy</h2>
+            <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.</p>
+            <h2>6. Contact us</h2>
+            <p>If you have any questions about this Privacy Policy, please contact us.</p>
+          </div>
+        </div>
+      `;
+      break;
+
+		default:
+			contentDiv.innerHTML = '<h2>Page not found!</h2>';
+	}
+}
+
+</script>
         </div>
       </div>
 </body>
