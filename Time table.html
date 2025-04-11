@@ -1,0 +1,244 @@
+html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Study Schedule</title>
+<style>
+body {
+  font-family: sans-serif;
+  margin: 20px;
+  background-color: #f4f4f4;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+th {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+tr:hover {
+  background-color: #f8f8f8;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tr { border: 1px solid #ccc; margin-bottom: 10px; border-radius: 8px; }
+
+  td {
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  td:before {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    font-weight: bold;
+    content: attr(data-column);
+  }
+}
+</style>
+</head>
+<body>
+
+<table>
+  <thead>
+    <tr>
+      <th>Time</th>
+      <th>Monday-Thursday (University Days)</th>
+      <th>Friday-Sunday (Off Days)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th colspan="3">3:00-6:30 AM</th>
+    </tr>
+    <tr>
+      <td data-column="Time">3:00</td>
+      <td data-column="Monday-Thursday">Wake up, freshen up, drink water</td>
+      <td data-column="Friday-Sunday">Wake up + freshen</td>
+    </tr>
+    <tr>
+      <td data-column="Time">3:15</td>
+      <td data-column="Monday-Thursday">Study Block 1 (1.5 hrs)</td>
+      <td data-column="Friday-Sunday">Study Block 1 (2 hrs)</td>
+    </tr>
+    <tr>
+      <td data-column="Time">4:45</td>
+      <td data-column="Monday-Thursday">Tea/snack break + stretch</td>
+      <td data-column="Friday-Sunday"></td>
+    </tr>
+    <tr>
+      <td data-column="Time">5:00</td>
+      <td data-column="Monday-Thursday">Study Block 2 (1 hr)</td>
+      <td data-column="Friday-Sunday">Tea + stretch / calm walk</td>
+    </tr>
+    <tr>
+      <td data-column="Time">5:15</td>
+      <td data-column="Monday-Thursday"></td>
+      <td data-column="Friday-Sunday"></td>
+    </tr>
+    <tr>
+      <td data-column="Time">5:30</td>
+      <td data-column="Monday-Thursday"></td>
+      <td data-column="Friday-Sunday">Study Block 2 (1 hr)</td>
+    </tr>
+    <tr>
+      <td data-column="Time">6:00</td>
+      <td data-column="Monday-Thursday">Chill 30 mins</td>
+      <td data-column="Friday-Sunday">Music or 15-min diary writing</td>
+    </tr>
+    <tr>
+      <th colspan="3">6:30-8:00 AM</th>
+    </tr>
+    <tr>
+      <td data-column="Time">6:30</td>
+      <td data-column="Monday-Thursday">Breakfast</td>
+      <td data-column="Friday-Sunday"></td>
+    </tr>
+    <tr>
+      <td data-column="Time">7:00</td>
+      <td data-column="Monday-Thursday">Pack bag + light reading</td>
+      <td data-column="Friday-Sunday">Breakfast</td>
+    </tr>
+    <tr>
+      <td data-column="Time">8:00</td>
+      <td data-column="Monday-Thursday">Leave for university</td>
+      <td data-column="Friday-Sunday">Study Block 3 (2 hrs)</td>
+    </tr>
+    <tr>
+      <th colspan="3">8:30 AM-5:00 PM</th>
+    </tr>
+    <tr>
+      <td data-column="Time">8:30 AM-5:00 PM</td>
+      <td data-column="Monday-Thursday">University Time (Snack, hydrate, quick notes)</td>
+      <td data-column="Friday-Sunday"></td>
+    </tr>
+    <tr>
+      <th colspan="3">5:30-9:30 PM</th>
+    </tr>
+    <tr>
+      <td data-column="Time">5:30</td>
+      <td data-column="Monday-Thursday">Light rest (10-15 min)</td>
+      <td data-column="Friday-Sunday"></td>
+    </tr>
+    <tr>
+      <td data-column="Time">6:00</td>
+      <td data-column="Monday-Thursday">Snack + walk</td>
+      <td data-column="Friday-Sunday"></td>
+    </tr>
+    <tr>
+      <td data-column="Time">6:30</td>
+      <td data-column="Monday-Thursday">Study Block 3 (45 min)</td>
+      <td data-column="Friday-Sunday">Light reading / future planning</td>
+    </tr>
+    <tr>
+      <td data-column="Time">7:00</td>
+      <td data-column="Monday-Thursday"></td>
+      <td data-column="Friday-Sunday"></td>
+    </tr>
+    <tr>
+      <td data-column="Time">7:30</td>
+      <td data-column="Monday-Thursday">Dinner</td>
+      <td data-column="Friday-Sunday">Dinner</td>
+    </tr>
+    <tr>
+      <td data-column="Time">8:00</td>
+      <td data-column="Monday-Thursday">Relax</td>
+      <td data-column="Friday-Sunday">Calm activities</td>
+    </tr>
+    <tr>
+      <td data-column="Time">9:30</td>
+      <td data-column="Monday-Thursday">Sleep</td>
+      <td data-column="Friday-Sunday">Sleep</td>
+    </tr>
+    <tr>
+      <th colspan="3">7:00 AM-12:00 PM (Friday-Sunday Only)</th>
+    </tr>
+    <tr>
+      <td data-column="Time">8:00</td>
+      <td data-column="Monday-Thursday"></td>
+      <td data-column="Friday-Sunday">Study Block 3 (2 hrs)</td>
+    </tr>
+    <tr>
+      <td data-column="Time">10:00</td>
+      <td data-column="Monday-Thursday"></td>
+      <td data-column="Friday-Sunday">Chill break</td>
+    </tr>
+    <tr>
+      <td data-column="Time">11:00</td>
+      <td data-column="Monday-Thursday"></td>
+      <td data-column="Friday-Sunday">Light review or physics videos</td>
+    </tr>
+    <tr>
+      <th colspan="3">12:00-4:00 PM (Friday-Sunday Only)</th>
+    </tr>
+    <tr>
+      <td data-column="Time">12:00</td>
+      <td data-column="Monday-Thursday"></td>
+      <td data-column="Friday-Sunday">Lunch</td>
+    </tr>
+    <tr>
+      <td data-column="Time">1:00</td>
+      <td data-column="Monday-Thursday"></td>
+      <td data-column="Friday-Sunday">Study Block 4 (1.5 hrs)</td>
+    </tr>
+    <tr>
+      <td data-column="Time">2:30</td>
+      <td data-column="Monday-Thursday"></td>
+      <td data-column="Friday-Sunday">Nap / rest / music</td>
+    </tr>
+    <tr>
+      <td data-column="Time">3:30</td>
+      <td data-column="Monday-Thursday"></td>
+      <td data-column="Friday-Sunday">Snack + light stretching</td>
+    </tr>
+    <tr>
+      <th colspan="3">4:30-9:30 PM (Friday-Sunday Only)</th>
+    </tr>
+    <tr>
+      <td data-column="Time">4:30</td>
+      <td data-column="Monday-Thursday"></td>
+      <td data-column="Friday-Sunday">Study Block 5 (45 mins)</td>
+    </tr>
+    <tr>
+      <td data-column="Time">5:30</td>
+      <td data-column="Monday-Thursday"></td>
+      <td data-column="Friday-Sunday">Walk / chill</td>
+    </tr>
+  </tbody>
+</table>
+
+</body>
+</html>
